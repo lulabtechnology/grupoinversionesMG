@@ -242,4 +242,225 @@ export default function ContactForm() {
               <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-500">
                 ▼
               </div>
-            </
+            </div>
+            {errors.role ? (
+              <p id={errId("role")} className="text-xs text-red-600">
+                {errors.role}
+              </p>
+            ) : null}
+          </div>
+
+          <div className="grid gap-2">
+            <Label htmlFor="propertyType">Tipo de inmueble *</Label>
+            <div className="relative">
+              <Select
+                id="propertyType"
+                value={state.propertyType}
+                onChange={(ev) => setField("propertyType", ev.target.value)}
+                required
+                aria-invalid={!!errors.propertyType}
+                aria-describedby={errors.propertyType ? errId("propertyType") : undefined}
+              >
+                <option value="">Seleccionar</option>
+                {landing.form.propertyTypes.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </Select>
+              <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-500">
+                ▼
+              </div>
+            </div>
+            {errors.propertyType ? (
+              <p id={errId("propertyType")} className="text-xs text-red-600">
+                {errors.propertyType}
+              </p>
+            ) : null}
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-2">
+            <Label htmlFor="email">Email *</Label>
+            <Input
+              id="email"
+              type="email"
+              value={state.email}
+              onChange={(ev) => setField("email", ev.target.value)}
+              placeholder="tu@correo.com"
+              required
+              autoComplete="email"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? errId("email") : undefined}
+            />
+            {errors.email ? (
+              <p id={errId("email")} className="text-xs text-red-600">
+                {errors.email}
+              </p>
+            ) : null}
+          </div>
+
+          <div className="grid gap-2">
+            <Label htmlFor="phone">Teléfono *</Label>
+            <Input
+              id="phone"
+              value={state.phone}
+              onChange={(ev) => setField("phone", ev.target.value)}
+              placeholder="6983-3111"
+              required
+              inputMode="tel"
+              autoComplete="tel"
+              aria-invalid={!!errors.phone}
+              aria-describedby={errors.phone ? errId("phone") : undefined}
+            />
+            {errors.phone ? (
+              <p id={errId("phone")} className="text-xs text-red-600">
+                {errors.phone}
+              </p>
+            ) : null}
+          </div>
+        </div>
+
+        <div className="grid gap-2">
+          <Label htmlFor="location">Ubicación (ciudad/área) *</Label>
+          <Input
+            id="location"
+            value={state.location}
+            onChange={(ev) => setField("location", ev.target.value)}
+            placeholder="Ej. Ciudad de Panamá / Tumba Muerto / Costa del Este"
+            required
+            autoComplete="address-level2"
+            aria-invalid={!!errors.location}
+            aria-describedby={errors.location ? errId("location") : undefined}
+          />
+          {errors.location ? (
+            <p id={errId("location")} className="text-xs text-red-600">
+              {errors.location}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="grid gap-2">
+          <Label>Servicios de interés *</Label>
+          <div
+            className={cn(
+              "rounded-3xl border bg-white p-4",
+              errors.interests ? "border-red-300" : ""
+            )}
+            role="group"
+            aria-describedby={errors.interests ? errId("interests") : undefined}
+          >
+            <div className="grid gap-3 sm:grid-cols-2">
+              {landing.form.interestOptions.map((opt) => (
+                <label key={opt} className="flex items-start gap-3 text-sm leading-6">
+                  <Checkbox
+                    checked={state.interests.includes(opt)}
+                    onChange={() => toggleInterest(opt)}
+                  />
+                  <span>{opt}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          {errors.interests ? (
+            <p id={errId("interests")} className="text-xs text-red-600">
+              {errors.interests}
+            </p>
+          ) : null}
+        </div>
+
+        <fieldset className="grid gap-2">
+          <legend className="text-sm font-medium text-slate-800">
+            Preferencia de atención *
+          </legend>
+          <div
+            className={cn(
+              "rounded-3xl border bg-white p-4",
+              errors.meetingPref ? "border-red-300" : ""
+            )}
+          >
+            <div className="flex flex-col sm:flex-row gap-3">
+              {landing.form.meetingPrefs.map((p) => (
+                <label key={p} className="flex items-center gap-2 text-sm">
+                  <input
+                    type="radio"
+                    name="meetingPref"
+                    className="h-4 w-4 accent-[hsl(var(--primary))]"
+                    checked={state.meetingPref === p}
+                    onChange={() => setField("meetingPref", p)}
+                    required
+                  />
+                  <span>{p}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          {errors.meetingPref ? (
+            <p id={errId("meetingPref")} className="text-xs text-red-600">
+              {errors.meetingPref}
+            </p>
+          ) : null}
+        </fieldset>
+
+        <div className="grid gap-2">
+          <Label htmlFor="message">Mensaje (opcional)</Label>
+          <Textarea
+            id="message"
+            value={state.message}
+            onChange={(ev) => setField("message", ev.target.value)}
+            placeholder="Cuéntanos el contexto o urgencia. Ej: mantenimiento, diagnóstico, administración, etc."
+          />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button type="submit" size="lg" className="gap-2">
+            <Mail className="h-4 w-4" />
+            {landing.form.submitLabel}
+          </Button>
+
+          {submitted && mailPreview ? (
+            <Button
+              type="button"
+              size="lg"
+              variant="outline"
+              className="gap-2"
+              onClick={() => copyToClipboard(mailPreview)}
+            >
+              <Copy className="h-4 w-4" />
+              {copied ? "Copiado" : "Copiar resumen"}
+            </Button>
+          ) : null}
+        </div>
+
+        {submitted && mailPreview ? (
+          <div className="mt-2 rounded-3xl border bg-white p-5">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 text-slate-700" />
+              <div>
+                <div className="font-display font-semibold tracking-tight">
+                  {landing.form.successTitle}
+                </div>
+                <p className="mt-1 text-sm text-mutedForeground leading-6">
+                  {landing.form.successSubtitle}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <Label className="text-xs text-mutedForeground">Resumen generado</Label>
+              <pre className="mt-2 whitespace-pre-wrap rounded-3xl border bg-slate-50 p-4 text-xs leading-5 text-slate-800">
+{mailPreview}
+              </pre>
+            </div>
+          </div>
+        ) : null}
+      </form>
+
+      <p className="mt-5 text-xs text-mutedForeground leading-5">
+        Al enviar, se abre tu aplicación de correo con un mensaje prellenado a{" "}
+        <span className="text-slate-900">{landing.mailto.to}</span>.
+      </p>
+    </div>
+  );
+}
