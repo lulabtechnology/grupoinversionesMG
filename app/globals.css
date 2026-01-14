@@ -21,7 +21,8 @@
   --primary-foreground: 0 0% 100%;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -30,7 +31,9 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @layer base {
@@ -61,18 +64,23 @@ html {
   .container-pad {
     @apply container px-4 sm:px-6 lg:px-8;
   }
+
   .section-pad {
-    @apply py-14 sm:py-18 lg:py-24;
+    @apply py-14 sm:py-20 lg:py-24;
   }
+
   .surface {
     @apply rounded-3xl border bg-card shadow-soft;
   }
+
   .hairline {
     @apply h-px w-full bg-gradient-to-r from-transparent via-slate-300/70 to-transparent;
   }
+
   .font-display {
     font-family: var(--font-manrope), var(--font-inter), system-ui, sans-serif;
   }
+
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
