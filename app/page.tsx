@@ -9,10 +9,11 @@ import Faq from "@/components/sections/Faq";
 import FinalCta from "@/components/sections/FinalCta";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+import StickyCta from "@/components/sections/StickyCta";
 
 export default function Page() {
   return (
-    <main className="min-h-screen">
+    <main id="main" className="min-h-screen pb-24 lg:pb-0">
       <Header />
       <Hero />
       <ValueProps />
@@ -24,6 +25,7 @@ export default function Page() {
       <FinalCta />
       <Contact />
       <Footer />
+      <StickyCta />
     </main>
   );
 }
