@@ -16,7 +16,7 @@
   --border: 214 18% 86%;
   --ring: 184 62% 34%;
 
-  /* Primary ~ teal del logo (#21868C aprox) */
+  /* Primary ~ teal del logo */
   --primary: 184 62% 34%;
   --primary-foreground: 0 0% 100%;
 }
@@ -29,12 +29,30 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  ::selection {
+    background: rgba(33, 134, 140, 0.22);
+  }
+
+  a {
+    @apply focus-visible:outline-none;
+  }
+
+  /* Quita el marcador default de <summary> */
+  summary::-webkit-details-marker {
+    display: none;
   }
 }
 
@@ -57,5 +75,10 @@ html {
   }
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  /* Microdetalle premium: hover suave en tarjetas */
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-0.5;
   }
 }
