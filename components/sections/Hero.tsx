@@ -12,12 +12,13 @@ export default function Hero() {
     "Hola, me gustaría solicitar una cotización con Grupo MG. ¿Podemos coordinar una reunión?";
 
   const mailBody =
-    `Hola Grupo MG,%0D%0A%0D%0A` +
-    `Me gustaría solicitar una cotización.%0D%0A` +
-    `Tipo de inmueble: ____%0D%0A` +
-    `Ubicación: ____%0D%0A` +
-    `Servicio(s) de interés: ____%0D%0A%0D%0A` +
-    `Quedo atento/a. धन्यवाद%0D%0A`;
+    "Hola Grupo MG,\n\n" +
+    "Me gustaría solicitar una cotización.\n\n" +
+    "Tipo de inmueble: ____\n" +
+    "Ubicación: ____\n" +
+    "Servicio(s) de interés: ____\n\n" +
+    "Gracias.";
+
 
   return (
     <section id="top" className="relative overflow-hidden">
