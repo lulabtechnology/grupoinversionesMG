@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens (premium, derivados del logo) */
+:root {
+  --background: 210 40% 98%;
+  --foreground: 214 35% 14%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 214 35% 14%;
+
+  --muted: 210 25% 94%;
+  --muted-foreground: 215 16% 35%;
+
+  --border: 214 18% 86%;
+  --ring: 184 62% 34%;
+
+  /* Primary ~ teal del logo (#21868C aprox) */
+  --primary: 184 62% 34%;
+  --primary-foreground: 0 0% 100%;
+}
+
+html, body {
+  height: 100%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Utilities de layout premium */
+@layer components {
+  .container-pad {
+    @apply container px-4 sm:px-6 lg:px-8;
+  }
+  .section-pad {
+    @apply py-14 sm:py-18 lg:py-24;
+  }
+  .surface {
+    @apply rounded-3xl border bg-card shadow-soft;
+  }
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-slate-300/70 to-transparent;
+  }
+}
