@@ -1,26 +1,30 @@
 "use client";
 
 import Brand from "@/components/site/Brand";
+import SkipLink from "@/components/site/SkipLink";
 import { landing } from "@/content/landing";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/links";
-import { Menu, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { Menu, MessageCircle, X } from "lucide-react";
+import { useId, useState } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const menuId = useId();
 
   const waMsg =
     "Hola, me gustaría solicitar una cotización con Grupo MG. ¿Podemos coordinar una reunión?";
 
   return (
     <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
+      <SkipLink />
+
       <div className="container-pad h-16 flex items-center justify-between gap-4">
         <a href="#top" className="focus-ring rounded-2xl">
           <Brand />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Navegación principal">
           {landing.nav.map((i) => (
             <a
               key={i.href}
@@ -49,15 +53,17 @@ export default function Header() {
 
         <button
           className="lg:hidden rounded-2xl border p-2 hover:bg-slate-900/5 focus-ring"
-          aria-label="Abrir menú"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
+          aria-controls={menuId}
           onClick={() => setOpen((v) => !v)}
         >
-          <Menu className="h-5 w-5" />
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {open ? (
-        <div className="lg:hidden border-t bg-white">
+        <div id={menuId} className="lg:hidden border-t bg-white">
           <div className="container-pad py-3 grid gap-1">
             {landing.nav.map((i) => (
               <a
@@ -69,6 +75,7 @@ export default function Header() {
                 {i.label}
               </a>
             ))}
+
             <div className="pt-2 grid gap-2">
               <Button
                 variant="outline"
@@ -79,6 +86,7 @@ export default function Header() {
               >
                 {landing.hero.primaryCta}
               </Button>
+
               <a href={waLink(landing.contact.whatsapp, waMsg)} target="_blank" rel="noreferrer">
                 <Button className="w-full gap-2">
                   <MessageCircle className="h-4 w-4" />
