@@ -188,6 +188,25 @@ export const landing = {
     primary: "Solicitar cotización",
     secondary: "Hablar por WhatsApp",
   },
+  form: {
+    title: "Solicita una cotización",
+    subtitle:
+      "Cuéntanos lo esencial. Coordinamos reunión y, si aplica, visita del inmueble.",
+    submitLabel: "Generar correo",
+    successTitle: "Listo: se abrirá tu correo",
+    successSubtitle:
+      "Si no se abre automáticamente, copia el resumen y pégalo en un correo a grupo@inversionesmg.com.",
+    roles: ["Dueño", "Administrador", "Gerente", "Otro"],
+    propertyTypes: ["PH", "Plaza comercial", "Bodega", "Otro"],
+    meetingPrefs: ["Virtual", "Presencial", "Ambas"],
+    interestOptions: [
+      "Servicios administrativos y legales",
+      "Contabilidad y finanzas",
+      "Construcción y mantenimiento",
+      "Gestión de contratistas, contratos y seguros",
+      "Informes técnicos y diagnóstico con tecnología",
+    ],
+  },
 
   contact: {
     title: "Contacto",
