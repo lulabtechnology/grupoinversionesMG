@@ -3,15 +3,26 @@ export const landing = {
     name: "Grupo MG",
     tagline:
       "Soluciones operativas y administrativas con bases tecnológicas para bodegas, PH y centros comerciales.",
+    scope: "Panamá, Centroamérica y el Caribe.",
+    logo: "/images/brand/logo.svg", // tú subes el asset luego
   },
-  locales: ["es"] as const,
+
+  nav: [
+    { label: "Servicios", href: "#servicios" },
+    { label: "Sectores", href: "#sectores" },
+    { label: "Tecnología", href: "#tecnologia" },
+    { label: "Proceso", href: "#proceso" },
+    { label: "FAQs", href: "#faqs" },
+    { label: "Contacto", href: "#contacto" },
+  ],
 
   hero: {
     headline: "Eficiencia operativa y contratos claros por servicios.",
     subheadline:
-      "Administramos, diagnosticamos y ejecutamos soluciones para bienes inmuebles con tecnología de punta y un equipo profesional, humano y orientado a resultados.",
+      "Soluciones para bienes inmuebles con tecnología de punta y profesionalismo humano: diagnóstico, administración y ejecución con alcance definido por contrato.",
     primaryCta: "Solicitar cotización",
     secondaryCta: "Hablar por WhatsApp",
+    heroImage: "/images/hero/hero.jpg",
   },
 
   valueProps: [
@@ -25,7 +36,7 @@ export const landing = {
     },
     {
       title: "Tecnología + profesionalismo humano",
-      desc: "Diagnóstico y seguimiento apoyados por herramientas técnicas, con comunicación directa y criterio experto.",
+      desc: "Herramientas técnicas para diagnosticar y documentar, con criterio experto y comunicación directa.",
     },
   ],
 
@@ -33,11 +44,11 @@ export const landing = {
     {
       key: "legal",
       title: "Servicios administrativos y legales",
-      desc: "Estructuración y soporte legal para operación y administración de bienes inmuebles.",
+      desc: "Soporte legal y estructuración para la operación y administración de bienes inmuebles.",
       bullets: [
-        "Manejo legal para constitución de empresas e inscripción en entidades gubernamentales.",
+        "Constitución de empresas e inscripción en entidades gubernamentales.",
         "Constitución de personería jurídica para administración de PH o bienes inmuebles.",
-        "Reglamentos internos de convivencia y uso (PH, bodegas, plazas comerciales, hoteles, parques e industria).",
+        "Reglamentos internos de convivencia y uso (PH, bodegas, plazas, hoteles, parques e industria).",
       ],
       image: "/images/services/legal.jpg",
     },
@@ -46,14 +57,13 @@ export const landing = {
       title: "Contabilidad y finanzas",
       desc: "Control financiero, reportes y planificación para decisiones seguras.",
       bullets: [
-        "Servicios de contabilidad completo.",
+        "Contabilidad completa.",
         "Informes mensuales, trimestrales y anuales.",
         "Auditoría y fiscalización.",
-        "Creación de sistema de facturación y presupuesto anual.",
-        "Contratación y comparativo de proveedores.",
-        "Supervisión de trabajos contratados para pagos y garantías.",
-        "Cronograma de trabajos y costos de mantenimiento.",
-        "Gestión de mercadeo y ventas (según necesidad del inmueble).",
+        "Sistema de facturación y presupuesto anual.",
+        "Comparativo de proveedores.",
+        "Supervisión de trabajos para pagos y garantías.",
+        "Cronogramas y costos de mantenimiento.",
         "Asesoría de nuevas inversiones basada en el mercado.",
       ],
       image: "/images/services/accounting.jpg",
@@ -64,40 +74,39 @@ export const landing = {
       desc: "Ejecución con personal idóneo (arquitectos e ingenieros) y enfoque preventivo/correctivo.",
       bullets: [
         "Diseños de construcción.",
-        "Mantenimiento de estructura (techo, paredes, pisos, cimientos y estacionamientos).",
+        "Estructura (techo, paredes, pisos, cimientos y estacionamientos).",
         "Cuartos de bombas y cuartos eléctricos.",
         "Aire acondicionado.",
-        "Voz y data / fibra óptica (según alcance).",
+        "Voz y data.",
         "Tanques de reserva.",
-        "Sistemas de alarmas.",
-        "Sistema contra incendio y sistema húmedo.",
+        "Alarmas y contra incendio (incl. sistema húmedo).",
       ],
       image: "/images/services/construction.jpg",
     },
     {
       key: "contracts",
       title: "Gestión de contratistas, contratos y seguros",
-      desc: "Selección, comparación y formalización por proyecto para reducir riesgos.",
+      desc: "Comparación, formalización y cobertura por proyecto para reducir riesgos.",
       bullets: [
-        "Contratistas certificados: 3 opciones por proyecto + comparativo para decisión del cliente.",
+        "Contratistas certificados: 3 opciones por proyecto + comparativo para decisión.",
         "Gestión de créditos en materiales y mano de obra (según evaluación).",
         "Contratos específicos por tareas o proyectos.",
         "Seguros de daños a terceros.",
-        "Fianzas de cumplimiento, abono y reclamo por incumplimiento (según aplique).",
+        "Fianzas de cumplimiento y reclamo por incumplimiento (según aplique).",
       ],
       image: "/images/services/contracts.jpg",
     },
     {
-      key: "tech",
+      key: "inspection",
       title: "Informes técnicos y diagnóstico con tecnología",
-      desc: "Levantamiento técnico detallado por sistema, con herramientas de inspección avanzadas.",
+      desc: "Levantamiento detallado por sistema, con herramientas de inspección avanzadas.",
       bullets: [
-        "Informes y peritajes con tecnología de punta (según requerimiento).",
+        "Peritajes, certificados e informes técnicos (según requerimiento).",
         "Cámaras térmicas infrarrojas telescópicas para detectar daños internos.",
         "Drones para imágenes panorámicas.",
         "Cámaras fotográficas de alta definición.",
-        "Diagnóstico por sistema: estructural, eléctrico, plomería, aire acondicionado, alarmas, contra incendio, fibra óptica.",
-        "Mantenimiento correctivo y preventivo + recomendaciones para actualización de sistemas.",
+        "Diagnóstico por sistema: estructural, eléctrico, plomería, A/A, alarmas, contra incendio, fibra óptica.",
+        "Mantenimiento correctivo y preventivo + recomendaciones de actualización.",
       ],
       image: "/images/services/inspection.jpg",
     },
@@ -105,37 +114,44 @@ export const landing = {
 
   sectors: {
     title: "Sectores atendidos",
-    items: [
-      "Plazas comerciales",
-      "Bodegas",
-      "Propiedad Horizontal (PH)",
+    subtitle:
+      "Especializados en operación y administración de inmuebles que requieren orden, trazabilidad y ejecución confiable.",
+    items: ["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)"],
+  },
+
+  technology: {
+    title: "Tecnología aplicada para decisiones más seguras",
+    subtitle:
+      "Herramientas para inspección, documentación y diagnóstico. La recomendación final siempre se respalda con criterio técnico y alcance contractual.",
+    tools: [
+      {
+        title: "Cámaras térmicas",
+        desc: "Detección de anomalías internas y puntos críticos sin intervención invasiva.",
+        image: "/images/tech/thermal.jpg",
+      },
+      {
+        title: "Drones e imágenes panorámicas",
+        desc: "Levantamiento visual eficiente en cubiertas, fachadas y áreas de difícil acceso.",
+        image: "/images/tech/drone.jpg",
+      },
+      {
+        title: "Registro fotográfico HD",
+        desc: "Evidencia clara para informes, comparativos y seguimiento por sistema.",
+        image: "/images/tech/camera-hd.jpg",
+      },
     ],
-    scope: "Panamá, Centroamérica y el Caribe.",
   },
 
   process: {
     title: "Cómo trabajamos",
+    subtitle:
+      "Un flujo claro, con pasos definidos y entregables alineados al contrato por servicio.",
     steps: [
-      {
-        title: "Solicitud",
-        desc: "Recibimos tu necesidad y el contexto del inmueble.",
-      },
-      {
-        title: "Reunión",
-        desc: "Coordinamos reunión virtual o física para entender alcance y prioridades.",
-      },
-      {
-        title: "Visita del inmueble",
-        desc: "Cuando aplica, realizamos visita técnica para validar condiciones y riesgos.",
-      },
-      {
-        title: "Propuesta y contrato por servicio",
-        desc: "Presentamos alcance, entregables y condiciones: contratos claros por servicios.",
-      },
-      {
-        title: "Ejecución y seguimiento",
-        desc: "Implementación, reportes y recomendaciones según el contrato.",
-      },
+      { title: "Solicitud", desc: "Recibimos tu necesidad y el contexto del inmueble." },
+      { title: "Reunión", desc: "Coordinamos reunión virtual o física para entender alcance y prioridades." },
+      { title: "Visita del inmueble", desc: "Cuando aplica, realizamos visita técnica para validar condiciones y riesgos." },
+      { title: "Propuesta y contrato por servicio", desc: "Alcance, entregables y condiciones: contratos claros por servicios." },
+      { title: "Ejecución y seguimiento", desc: "Implementación, reportes y recomendaciones según el contrato." },
     ],
   },
 
@@ -148,36 +164,35 @@ export const landing = {
       },
       {
         q: "¿Cómo definen el alcance del trabajo?",
-        a: "El alcance se define por sistema/tarea/proyecto y se formaliza en un contrato con entregables y responsabilidades.",
+        a: "Se define por sistema/tarea/proyecto y queda establecido en un contrato con entregables y responsabilidades.",
       },
       {
-        q: "¿Ofrecen visitas y diagnósticos técnicos?",
-        a: "Sí. Coordinamos reunión y, cuando aplica, visita del inmueble para levantar información técnica y recomendaciones.",
-      },
-      {
-        q: "¿Manejan proveedores y comparativos?",
-        a: "Sí. Recomendamos opciones certificadas y preparamos comparativos para facilitar la toma de decisión.",
+        q: "¿Qué ocurre después de solicitar cotización?",
+        a: "Coordinamos una reunión (virtual o física) y, cuando aplica, programamos visita del inmueble.",
       },
       {
         q: "¿Incluyen garantías?",
         a: "La garantía y condiciones aplican según el contrato de servicio acordado.",
       },
       {
-        q: "¿En qué zonas trabajan?",
-        a: "Panamá principalmente, con alcance a Centroamérica y Caribe según el proyecto.",
-      },
-      {
-        q: "¿Pueden ayudar con reglamentos de PH y personería jurídica?",
-        a: "Sí. Contemplamos soporte legal-administrativo para PH y bienes inmuebles, incluyendo reglamentos y trámites relacionados.",
-      },
-      {
-        q: "¿Qué pasa después del formulario?",
-        a: "Coordinamos reunión virtual o física y, de ser necesario, programamos visita del inmueble.",
+        q: "¿Manejan proveedores y comparativos?",
+        a: "Sí. Presentamos comparativos para facilitar la decisión del cliente y asegurar trazabilidad del proceso.",
       },
     ],
   },
 
+  finalCta: {
+    title: "Listos para optimizar la operación de tu inmueble.",
+    subtitle:
+      "Cuéntanos tu necesidad. Coordinamos reunión y, si aplica, visita del inmueble para levantar información técnica.",
+    primary: "Solicitar cotización",
+    secondary: "Hablar por WhatsApp",
+  },
+
   contact: {
+    title: "Contacto",
+    subtitle:
+      "Escríbenos y coordinamos los próximos pasos. También puedes contactarnos por WhatsApp.",
     email: "grupo@inversionesmg.com",
     phone: "6983-3111",
     whatsapp: "6983-3111",
