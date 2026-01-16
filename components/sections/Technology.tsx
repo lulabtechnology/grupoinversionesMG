@@ -1,42 +1,52 @@
+"use client";
+
+import Image from "next/image";
+import FadeIn from "@/components/motion/FadeIn";
 import SectionHeading from "@/components/site/SectionHeading";
 import { landing } from "@/content/landing";
-import FadeIn from "@/components/motion/FadeIn";
-import Image from "next/image";
 
 export default function Technology() {
   return (
     <section id="tecnologia" className="section-pad scroll-mt-24">
       <div className="container-pad">
-        <SectionHeading
-          title={landing.technology.title}
-          subtitle={landing.technology.subtitle}
-        />
+        <SectionHeading title={landing.technology.title} subtitle={landing.technology.subtitle} />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {landing.technology.tools.map((t, idx) => (
-            <FadeIn key={t.title} delay={idx * 0.04}>
-              <div className="surface overflow-hidden hover:-translate-y-0.5 transition-transform">
-                <div className="relative h-44 bg-slate-100">
-                  <Image
-                    src={t.image}
-                    alt={t.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 380px"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/10 via-transparent to-white/10" />
+        <div className="mt-10 grid gap-6 lg:grid-cols-12 lg:items-start">
+          <FadeIn className="lg:col-span-6">
+            <div className="surface p-7">
+              <ul className="grid gap-2 text-sm text-slate-700">
+                {landing.technology.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <details className="mt-6 rounded-2xl border bg-white px-4 py-3">
+                <summary className="cursor-pointer text-sm font-medium text-slate-800">
+                  {landing.technology.detailsTitle}
+                </summary>
+                <div className="mt-3 grid gap-2 text-sm text-slate-700 leading-6">
+                  {landing.technology.details.map((x) => (
+                    <p key={x}>• {x}</p>
+                  ))}
                 </div>
-                <div className="p-6">
-                  <div className="font-display text-lg font-semibold tracking-tight">
-                    {t.title}
+              </details>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.06} className="lg:col-span-6">
+            <div className="grid gap-6">
+              {landing.technology.images.map((img) => (
+                <div key={img.src} className="surface overflow-hidden hover-lift">
+                  <div className="relative aspect-[16/10] w-full">
+                    <Image src={img.src} alt={img.alt} fill className="object-cover" />
                   </div>
-                  <p className="mt-2 text-sm text-mutedForeground leading-6">
-                    {t.desc}
-                  </p>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
