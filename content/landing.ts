@@ -122,4 +122,122 @@ export const landing = {
         "Cámaras térmicas infrarrojas telescópicas para detectar daños internos.",
         "Drones para imágenes panorámicas.",
         "Cámaras fotográficas de alta definición.",
-        "Diagnóstico por sistema: estructural, eléctrico, plomería, A/A, alarmas, contra incendi
+        "Diagnóstico por sistema: estructural, eléctrico, plomería, A/A, alarmas, contra incendio, fibra óptica.",
+        "Mantenimiento correctivo y preventivo + recomendaciones de actualización.",
+      ],
+      image: "", // reducimos uso real de imágenes
+    },
+  ],
+
+  sectors: {
+    title: "Sectores atendidos",
+    subtitle:
+      "Especializados en operación y administración de inmuebles que requieren orden, trazabilidad y ejecución confiable.",
+    items: ["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)"],
+  },
+
+  technology: {
+    title: "Tecnología aplicada para decisiones más seguras",
+    subtitle:
+      "Herramientas para inspección, documentación y diagnóstico. La recomendación final siempre se respalda con criterio técnico y alcance contractual.",
+    tools: [
+      {
+        title: "Cámaras térmicas",
+        desc: "Detección de anomalías internas y puntos críticos sin intervención invasiva.",
+        image: "/images/tech/thermal.jpg",
+      },
+      {
+        title: "Drones e imágenes panorámicas",
+        desc: "Levantamiento visual eficiente en cubiertas, fachadas y áreas de difícil acceso.",
+        image: "/images/tech/drone.jpg",
+      },
+      {
+        title: "Registro fotográfico HD",
+        desc: "Evidencia clara para informes, comparativos y seguimiento por sistema.",
+        image: "", // reducimos imagen (opcional si luego la quieres)
+      },
+    ],
+  },
+
+  process: {
+    title: "Cómo trabajamos",
+    subtitle:
+      "Un flujo claro, con pasos definidos y entregables alineados al contrato por servicio.",
+    steps: [
+      { title: "Solicitud", desc: "Recibimos tu necesidad y el contexto del inmueble." },
+      { title: "Reunión", desc: "Coordinamos reunión virtual o física para entender alcance y prioridades." },
+      { title: "Visita del inmueble", desc: "Cuando aplica, realizamos visita técnica para validar condiciones y riesgos." },
+      { title: "Propuesta y contrato por servicio", desc: "Alcance, entregables y condiciones: contratos claros por servicios." },
+      { title: "Ejecución y seguimiento", desc: "Implementación, reportes y recomendaciones según el contrato." },
+    ],
+  },
+
+  faq: {
+    title: "Preguntas frecuentes",
+    items: [
+      {
+        q: "¿Trabajan por administración completa o por servicios puntuales?",
+        a: "Ambos. Podemos asumir gestión integral o resolver necesidades específicas mediante un contrato por servicio.",
+      },
+      {
+        q: "¿Cómo definen el alcance del trabajo?",
+        a: "Se define por sistema/tarea/proyecto y queda establecido en un contrato con entregables y responsabilidades.",
+      },
+      {
+        q: "¿Qué ocurre después de solicitar cotización?",
+        a: "Coordinamos una reunión (virtual o física) y, cuando aplica, programamos visita del inmueble.",
+      },
+      {
+        q: "¿Incluyen garantías?",
+        a: "La garantía y condiciones aplican según el contrato de servicio acordado.",
+      },
+      {
+        q: "¿Manejan proveedores y comparativos?",
+        a: "Sí. Presentamos comparativos para facilitar la decisión del cliente y asegurar trazabilidad del proceso.",
+      },
+    ],
+  },
+
+  finalCta: {
+    title: "Listos para optimizar la operación de tu inmueble.",
+    subtitle:
+      "Cuéntanos tu necesidad. Coordinamos reunión y, si aplica, visita del inmueble para levantar información técnica.",
+    primary: "Solicitar cotización",
+    secondary: "Hablar por WhatsApp",
+  },
+
+  form: {
+    title: "Solicita una cotización",
+    subtitle:
+      "Cuéntanos lo esencial. Coordinamos reunión y, si aplica, visita del inmueble.",
+    submitLabel: "Generar correo",
+    successTitle: "Listo: se abrirá tu correo",
+    successSubtitle:
+      "Si no se abre automáticamente, copia el resumen y pégalo en un correo a grupo@inversionesmg.com.",
+    roles: ["Dueño", "Administrador", "Gerente", "Otro"],
+    propertyTypes: ["PH", "Plaza comercial", "Bodega", "Otro"],
+    meetingPrefs: ["Virtual", "Presencial", "Ambas"],
+    interestOptions: [
+      "Servicios administrativos y legales",
+      "Contabilidad y finanzas",
+      "Construcción y mantenimiento",
+      "Gestión de contratistas, contratos y seguros",
+      "Informes técnicos y diagnóstico con tecnología",
+    ],
+  },
+
+  contact: {
+    title: "Contacto",
+    subtitle:
+      "Escríbenos y coordinamos los próximos pasos. También puedes contactarnos por WhatsApp.",
+    email: "grupo@inversionesmg.com",
+    phone: "6983-3111",
+    whatsapp: "6983-3111",
+    address: "Tumba Muerto, Dos Mares, PH Elite 500, ofic. 27C",
+  },
+
+  mailto: {
+    to: "grupo@inversionesmg.com",
+    subject: "Solicitud de cotización — Grupo MG",
+  },
+} as const;
