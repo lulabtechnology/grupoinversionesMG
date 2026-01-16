@@ -42,7 +42,6 @@ export default function FinalCta() {
               </div>
 
               <div className="mt-6 hairline" />
-
               <p className="mt-6 text-xs text-mutedForeground leading-5">
                 Alcance, entregables y garantía se establecen según contrato.
               </p>
