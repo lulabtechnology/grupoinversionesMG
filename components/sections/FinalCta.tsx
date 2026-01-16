@@ -1,8 +1,8 @@
 "use client";
 
 import FadeIn from "@/components/motion/FadeIn";
-import { Button } from "@/components/ui/button";
 import { landing } from "@/content/landing";
+import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/links";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
@@ -15,14 +15,11 @@ export default function FinalCta() {
       <div className="container-pad">
         <FadeIn>
           <div className="surface overflow-hidden">
-            <div className="relative p-8 sm:p-12">
-              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(33,134,140,0.18),transparent_60%)]" />
-              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom,rgba(41,46,89,0.14),transparent_60%)]" />
-
-              <h3 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight">
+            <div className="p-8 sm:p-10">
+              <div className="font-display text-2xl sm:text-3xl font-semibold tracking-tight">
                 {landing.finalCta.title}
-              </h3>
-              <p className="mt-3 max-w-2xl text-sm sm:text-base text-mutedForeground leading-7">
+              </div>
+              <p className="mt-3 text-sm sm:text-base text-mutedForeground leading-7 max-w-2xl">
                 {landing.finalCta.subtitle}
               </p>
 
@@ -37,12 +34,18 @@ export default function FinalCta() {
                 </Button>
 
                 <a href={waLink(landing.contact.whatsapp, waMsg)} target="_blank" rel="noreferrer">
-                  <Button size="lg" variant="outline" className="gap-2">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2">
                     <MessageCircle className="h-4 w-4" />
                     {landing.finalCta.secondary}
                   </Button>
                 </a>
               </div>
+
+              <div className="mt-6 hairline" />
+
+              <p className="mt-6 text-xs text-mutedForeground leading-5">
+                Alcance, entregables y garantía se establecen según contrato.
+              </p>
             </div>
           </div>
         </FadeIn>
