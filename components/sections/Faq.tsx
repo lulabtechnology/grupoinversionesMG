@@ -1,30 +1,23 @@
+"use client";
+
+import FadeIn from "@/components/motion/FadeIn";
 import SectionHeading from "@/components/site/SectionHeading";
 import { landing } from "@/content/landing";
-import FadeIn from "@/components/motion/FadeIn";
 
 export default function Faq() {
   return (
-    <section id="faqs" className="section-pad scroll-mt-24">
+    <section className="section-pad">
       <div className="container-pad">
-        <SectionHeading title={landing.faq.title} />
+        <SectionHeading title={landing.faq.title} subtitle="" />
 
-        <div className="mt-10 grid gap-4">
-          {landing.faq.items.map((it, idx) => (
-            <FadeIn key={it.q} delay={idx * 0.02}>
-              <details className="surface p-6 group">
-                <summary className="cursor-pointer list-none focus-ring rounded-2xl">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="font-display font-semibold tracking-tight">
-                      {it.q}
-                    </div>
-                    <div className="mt-1 h-6 w-6 rounded-full border bg-white text-center leading-6 text-sm text-mutedForeground group-open:rotate-45 transition-transform">
-                      +
-                    </div>
-                  </div>
+        <div className="mt-8 grid gap-4">
+          {landing.faq.items.map((x, idx) => (
+            <FadeIn key={x.q} delay={idx * 0.03}>
+              <details className="surface px-6 py-5">
+                <summary className="cursor-pointer font-display font-semibold tracking-tight">
+                  {x.q}
                 </summary>
-                <p className="mt-3 text-sm text-mutedForeground leading-6">
-                  {it.a}
-                </p>
+                <p className="mt-3 text-sm text-mutedForeground leading-6">{x.a}</p>
               </details>
             </FadeIn>
           ))}
