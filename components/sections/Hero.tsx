@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 import { landing } from "@/content/landing";
-import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/motion/FadeIn";
+import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/links";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export default function Hero() {
   const waMsg =
     "Hola, me gustaría solicitar una cotización con Grupo MG. ¿Podemos coordinar una reunión?";
+
+  const goContact = () => {
+    window.location.hash = "#contacto";
+  };
 
   return (
     <section id="top" className="section-pad">
@@ -20,37 +24,38 @@ export default function Hero() {
               <h1 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight">
                 {landing.hero.headline}
               </h1>
+
               <p className="mt-4 text-base sm:text-lg text-mutedForeground leading-7">
                 {landing.hero.subheadline}
               </p>
 
-              <ul className="mt-6 grid gap-2 text-sm text-slate-700">
-                {landing.valueProps.map((p) => (
-                  <li key={p.title} className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
-                    <span>
-                      <span className="font-medium">{p.title}:</span> {p.desc}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Button
-                  size="lg"
-                  className="gap-2"
-                  onClick={() => (window.location.hash = "#contacto")}
-                >
+                <Button size="lg" className="gap-2" onClick={goContact}>
                   {landing.hero.primaryCta}
                   <ArrowRight className="h-4 w-4" />
                 </Button>
 
-                <a href={waLink(landing.contact.whatsapp, waMsg)} target="_blank" rel="noreferrer">
+                <a
+                  href={waLink(landing.contact.whatsapp, waMsg)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2">
                     <MessageCircle className="h-4 w-4" />
                     {landing.hero.secondaryCta}
                   </Button>
                 </a>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-2">
+                {["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)"].map((x) => (
+                  <span
+                    key={x}
+                    className="rounded-full border bg-white px-3 py-1 text-xs text-slate-700"
+                  >
+                    {x}
+                  </span>
+                ))}
               </div>
             </FadeIn>
           </div>
@@ -74,3 +79,14 @@ export default function Hero() {
                     Contratos claros por servicios
                   </div>
                   <p className="mt-2 text-sm text-mutedForeground leading-6">
+                    Alcance definido, entregables y seguimiento. Garantía según contrato.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
