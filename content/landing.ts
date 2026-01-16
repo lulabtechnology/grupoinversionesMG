@@ -7,15 +7,9 @@ export const landing = {
     logo: "/images/brand/logo.svg",
   },
 
-  // Alias útil para componentes que usan landing.images.*
   images: {
     logo: "/images/brand/logo.svg",
     hero: "/images/hero/hero.jpg",
-    services: {
-      legal: "/images/services/legal.jpg",
-      accounting: "/images/services/accounting.jpg",
-      construction: "/images/services/construction.jpg",
-    },
     tech: {
       thermal: "/images/tech/thermal.jpg",
       drone: "/images/tech/drone.jpg",
@@ -56,7 +50,6 @@ export const landing = {
     },
   ],
 
-  // Servicios: mantenemos todo el contenido, pero la UI lo mostrará resumido + expandible
   services: [
     {
       key: "legal",
@@ -67,23 +60,35 @@ export const landing = {
         "Constitución de personería jurídica para administración de PH o bienes inmuebles.",
         "Reglamentos internos de convivencia y uso (PH, bodegas, plazas, hoteles, parques e industria).",
       ],
-      image: "/images/services/legal.jpg",
+      // GALERÍA (administrativo/legal)
+      gallery: [
+        "/images/services/admin-legal-1.jpg",
+        "/images/services/admin-legal-2.jpg",
+        "/images/services/admin-legal-3.jpg",
+      ],
     },
     {
       key: "finance",
       title: "Contabilidad y finanzas",
       desc: "Control financiero, reportes y planificación para decisiones seguras.",
       bullets: [
-        "Contabilidad completa.",
+        "Ciclo contable.",
         "Informes mensuales, trimestrales y anuales.",
         "Auditoría y fiscalización.",
         "Sistema de facturación y presupuesto anual.",
         "Comparativo de proveedores.",
         "Supervisión de trabajos para pagos y garantías.",
         "Cronogramas y costos de mantenimiento.",
+        "Gestión de mercadeo y ventas.",
         "Asesoría de nuevas inversiones basada en el mercado.",
       ],
-      image: "/images/services/accounting.jpg",
+      // GALERÍA (contable/financiero)
+      gallery: [
+        "/images/services/accounting-1.jpg",
+        "/images/services/accounting-2.jpg",
+        "/images/services/accounting-3.jpg",
+        "/images/services/accounting-4.jpg",
+      ],
     },
     {
       key: "maintenance",
@@ -91,14 +96,29 @@ export const landing = {
       desc: "Ejecución con personal idóneo (arquitectos e ingenieros) y enfoque preventivo/correctivo.",
       bullets: [
         "Diseños de construcción.",
-        "Estructura (techo, paredes, pisos, cimientos y estacionamientos).",
-        "Cuartos de bombas y cuartos eléctricos.",
+        "Diseño y construcción de anexos.",
+        "Mantenimiento de estructura (techo, paredes, pisos, cimientos y estacionamientos).",
+        "Áreas verdes y mantenimiento de exteriores.",
+        "Impermeabilización.",
+        "Pintura.",
+        "Cuarto de bombas y cuartos eléctricos.",
         "Aire acondicionado.",
         "Voz y data.",
         "Tanques de reserva.",
-        "Alarmas y contra incendio (incl. sistema húmedo).",
+        "Seguridad: portones eléctricos y cámaras.",
+        "Sistema contra incendio y sistema húmedo.",
+        "Sistema eléctrico de alta, media y baja tensión.",
       ],
-      image: "/images/services/construction.jpg",
+      // GALERÍA (áreas verdes / impermeabilización / seguridad / anexos / eléctrico)
+      gallery: [
+        "/images/services/greens-1.jpg",
+        "/images/services/greens-2.jpg",
+        "/images/services/waterproofing-1.jpg",
+        "/images/services/painting-1.jpg",
+        "/images/services/security-1.jpg",
+        "/images/services/annex-1.jpg",
+        "/images/services/electrical-1.jpg",
+      ],
     },
     {
       key: "contracts",
@@ -111,7 +131,6 @@ export const landing = {
         "Seguros de daños a terceros.",
         "Fianzas de cumplimiento y reclamo por incumplimiento (según aplique).",
       ],
-      image: "", // reducimos uso real de imágenes
     },
     {
       key: "inspection",
@@ -125,7 +144,6 @@ export const landing = {
         "Diagnóstico por sistema: estructural, eléctrico, plomería, A/A, alarmas, contra incendio, fibra óptica.",
         "Mantenimiento correctivo y preventivo + recomendaciones de actualización.",
       ],
-      image: "", // reducimos uso real de imágenes
     },
   ],
 
@@ -154,7 +172,7 @@ export const landing = {
       {
         title: "Registro fotográfico HD",
         desc: "Evidencia clara para informes, comparativos y seguimiento por sistema.",
-        image: "", // reducimos imagen (opcional si luego la quieres)
+        image: "",
       },
     ],
   },
