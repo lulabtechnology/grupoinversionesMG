@@ -1,6 +1,7 @@
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
+import Sectors from "@/components/sections/Sectors";
 import Technology from "@/components/sections/Technology";
 import Process from "@/components/sections/Process";
 import Faq from "@/components/sections/Faq";
@@ -15,6 +16,7 @@ export default function Page() {
       <Header />
       <Hero />
       <Services />
+      <Sectors />
       <Technology />
       <Process />
       <Faq />
