@@ -15,36 +15,43 @@ export default function Hero() {
     window.location.hash = "#contacto";
   };
 
+  // Subheadline resumido (mantiene esencia)
+  const shortSubheadline =
+    "Tecnología aplicada y criterio experto para operar inmuebles con alcance definido por contrato.";
+
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden"
-      aria-label="Hero Grupo MG"
-    >
-      {/* Background image */}
+    <section id="top" className="relative overflow-hidden" aria-label="Hero Grupo MG">
+      {/* Background image (cover, responsivo real) */}
       <div className="absolute inset-0 -z-10">
         <Image
           src={landing.hero.heroImage}
           alt="Infraestructura y operación de inmuebles"
           fill
-          className="object-cover"
           priority
+          sizes="100vw"
+          className="
+            object-cover
+            object-[70%_55%]
+            sm:object-[60%_55%]
+            lg:object-center
+          "
         />
 
-        {/* Overlays para look premium y legibilidad */}
-        <div className="absolute inset-0 bg-slate-950/55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-950/35 to-slate-950/65" />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_10%,rgba(33,134,140,0.35),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_85%_30%,rgba(15,23,42,0.35),transparent_60%)]" />
+        {/* Overlays premium: color + legibilidad */}
+        <div className="absolute inset-0 bg-slate-950/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/35 to-slate-950/65" />
+        <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_18%_12%,rgba(33,134,140,0.45),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_88%_28%,rgba(15,23,42,0.40),transparent_60%)]" />
       </div>
 
-      {/* Content */}
       <div className="container-pad">
-        <div className="py-14 sm:py-16 lg:py-20">
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+        {/* Más compacto que antes */}
+        <div className="py-12 sm:py-14 lg:py-16">
+          <div className="grid gap-7 lg:grid-cols-12 lg:items-center">
+            {/* Columna texto */}
             <div className="lg:col-span-7">
               <FadeIn>
-                <p className="text-sm text-white/80">
+                <p className="text-xs sm:text-sm text-white/80">
                   Operación y administración para inmuebles
                 </p>
 
@@ -53,21 +60,30 @@ export default function Hero() {
                 </h1>
 
                 <p className="mt-4 text-base sm:text-lg leading-7 text-white/80 max-w-2xl">
-                  {landing.hero.subheadline}
+                  {shortSubheadline}
                 </p>
 
-                {/* Micro-bullets compactos */}
-                <ul className="mt-6 grid gap-2 text-sm text-white/85 max-w-xl">
-                  {landing.valueProps.slice(0, 3).map((p) => (
-                    <li key={p.title} className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
-                      <span>
-                        <span className="font-medium text-white">{p.title}:</span>{" "}
-                        {p.desc}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Highlights cortos (sin párrafos largos) */}
+                <div className="mt-5 grid gap-2 text-sm text-white/85 max-w-xl">
+                  <div className="flex items-start gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
+                    <span>
+                      <span className="font-medium text-white">Eficiencia:</span> orden y ejecución con trazabilidad.
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
+                    <span>
+                      <span className="font-medium text-white">Contratos claros por servicios:</span> alcance y entregables definidos.
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
+                    <span>
+                      <span className="font-medium text-white">Tecnología + criterio humano:</span> diagnóstico y decisiones más seguras.
+                    </span>
+                  </div>
+                </div>
 
                 <div className="mt-7 flex flex-col sm:flex-row gap-3">
                   <Button
@@ -79,11 +95,7 @@ export default function Hero() {
                     <ArrowRight className="h-4 w-4" />
                   </Button>
 
-                  <a
-                    href={waLink(landing.contact.whatsapp, waMsg)}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href={waLink(landing.contact.whatsapp, waMsg)} target="_blank" rel="noreferrer">
                     <Button
                       size="lg"
                       variant="outline"
@@ -95,7 +107,7 @@ export default function Hero() {
                   </a>
                 </div>
 
-                <div className="mt-7 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2">
                   {["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)"].map((x) => (
                     <span
                       key={x}
@@ -108,18 +120,28 @@ export default function Hero() {
               </FadeIn>
             </div>
 
-            {/* Panel lateral corto (premium), sin imagen extra */}
+            {/* Card lateral (en mobile queda abajo) */}
             <div className="lg:col-span-5">
               <FadeIn delay={0.06}>
-                <div className="surface bg-white/7 border-white/15 backdrop-blur-sm p-6 sm:p-7">
-                  <div className="font-display font-semibold tracking-tight text-white">
-                    Contratos claros por servicios
+                <div
+                  className="
+                    surface
+                    border-white/15
+                    bg-white/10
+                    text-white
+                    backdrop-blur-sm
+                    p-5 sm:p-6
+                  "
+                >
+                  <div className="font-display font-semibold tracking-tight">
+                    Propuesta clara. Ejecución confiable.
                   </div>
                   <p className="mt-2 text-sm leading-6 text-white/80">
-                    Alcance definido, entregables y seguimiento. Garantía según contrato.
+                    Coordinamos reunión y, si aplica, visita del inmueble. Garantía según contrato.
                   </p>
+
                   <div className="mt-5 hairline opacity-40" />
-                  <p className="mt-5 text-xs leading-5 text-white/70">
+                  <p className="mt-4 text-xs leading-5 text-white/70">
                     Panamá, Centroamérica y Caribe.
                   </p>
                 </div>
