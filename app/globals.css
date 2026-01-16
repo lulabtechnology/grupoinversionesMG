@@ -53,7 +53,6 @@ html {
     @apply focus-visible:outline-none;
   }
 
-  /* Quita el marcador default de <summary> */
   summary::-webkit-details-marker {
     display: none;
   }
@@ -65,8 +64,9 @@ html {
     @apply container px-4 sm:px-6 lg:px-8;
   }
 
+  /* MÁS COMPACTO que antes */
   .section-pad {
-    @apply py-14 sm:py-20 lg:py-24;
+    @apply py-10 sm:py-12 lg:py-14;
   }
 
   .surface {
@@ -85,7 +85,6 @@ html {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
 
-  /* Microdetalle premium: hover suave en tarjetas */
   .hover-lift {
     @apply transition-transform duration-200 hover:-translate-y-0.5;
   }
