@@ -17,19 +17,20 @@ export default function Hero() {
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6">
             <FadeIn>
-              <p className="text-sm text-mutedForeground">{landing.hero.kicker}</p>
-              <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold tracking-tight">
-                {landing.hero.title}
+              <h1 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight">
+                {landing.hero.headline}
               </h1>
               <p className="mt-4 text-base sm:text-lg text-mutedForeground leading-7">
-                {landing.hero.subtitle}
+                {landing.hero.subheadline}
               </p>
 
               <ul className="mt-6 grid gap-2 text-sm text-slate-700">
-                {landing.hero.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2">
+                {landing.valueProps.map((p) => (
+                  <li key={p.title} className="flex items-start gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
-                    <span>{b}</span>
+                    <span>
+                      <span className="font-medium">{p.title}:</span> {p.desc}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -51,17 +52,6 @@ export default function Hero() {
                   </Button>
                 </a>
               </div>
-
-              <div className="mt-8 flex flex-wrap gap-2">
-                {["Bodegas", "PH", "Plazas comerciales", "Centros comerciales"].map((x) => (
-                  <span
-                    key={x}
-                    className="rounded-full border bg-white px-3 py-1 text-xs text-slate-700"
-                  >
-                    {x}
-                  </span>
-                ))}
-              </div>
             </FadeIn>
           </div>
 
@@ -70,7 +60,7 @@ export default function Hero() {
               <div className="surface overflow-hidden hover-lift">
                 <div className="relative aspect-[16/11] w-full">
                   <Image
-                    src={landing.images.hero}
+                    src={landing.hero.heroImage}
                     alt="Infraestructura y operación de inmuebles"
                     fill
                     className="object-cover"
@@ -84,15 +74,3 @@ export default function Hero() {
                     Contratos claros por servicios
                   </div>
                   <p className="mt-2 text-sm text-mutedForeground leading-6">
-                    Alcance definido, entregables y seguimiento. Tecnología para diagnosticar mejor y
-                    equipo humano idóneo para ejecutar.
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
