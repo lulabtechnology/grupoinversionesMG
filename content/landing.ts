@@ -7,16 +7,6 @@ export const landing = {
     logo: "/images/brand/logo.svg",
   },
 
-  images: {
-    logo: "/images/brand/logo.svg",
-    hero: "/images/hero/hero.jpg",
-    tech: {
-      thermal: "/images/tech/thermal.jpg",
-      drone: "/images/tech/drone.jpg",
-    },
-    og: "/og.jpg",
-  },
-
   nav: [
     { label: "Servicios", href: "#servicios" },
     { label: "Sectores", href: "#sectores" },
@@ -57,21 +47,24 @@ export const landing = {
       desc: "Soporte legal y estructuración para la operación y administración de bienes inmuebles.",
       bullets: [
         "Constitución de empresas e inscripción en entidades gubernamentales.",
-        "Constitución de personería jurídica para administración de PH o bienes inmuebles.",
-        "Reglamentos internos de convivencia y uso (PH, bodegas, plazas, hoteles, parques e industria).",
+        // (Cambio solicitado) Eliminado: “Constitución de personería jurídica...” por ser redundante
+        // (Cambio solicitado) Frase reemplazada:
+        "Reglamentos de uso para PH, bodegas, centros comerciales y hoteles.",
       ],
-      // GALERÍA (administrativo/legal)
+      image: "/images/services/legal.jpg",
       gallery: [
         "/images/services/admin-legal-1.jpg",
         "/images/services/admin-legal-2.jpg",
         "/images/services/admin-legal-3.jpg",
       ],
     },
+
     {
       key: "finance",
       title: "Contabilidad y finanzas",
       desc: "Control financiero, reportes y planificación para decisiones seguras.",
       bullets: [
+        // (Cambio solicitado)
         "Ciclo contable.",
         "Informes mensuales, trimestrales y anuales.",
         "Auditoría y fiscalización.",
@@ -79,10 +72,9 @@ export const landing = {
         "Comparativo de proveedores.",
         "Supervisión de trabajos para pagos y garantías.",
         "Cronogramas y costos de mantenimiento.",
-        "Gestión de mercadeo y ventas.",
         "Asesoría de nuevas inversiones basada en el mercado.",
       ],
-      // GALERÍA (contable/financiero)
+      image: "/images/services/accounting.jpg",
       gallery: [
         "/images/services/accounting-1.jpg",
         "/images/services/accounting-2.jpg",
@@ -90,48 +82,78 @@ export const landing = {
         "/images/services/accounting-4.jpg",
       ],
     },
+
+    // (Cambio solicitado) NUEVO SERVICIO
+    {
+      key: "cleaning",
+      title: "Limpieza y mantenimiento operativo",
+      desc: "Servicio de limpieza con alcance definido por contrato y enfoque en operación diaria.",
+      bullets: [
+        "Limpieza de áreas comunes y operativas.",
+        "Plan de frecuencias y alcance por zonas (según contrato).",
+        "Supervisión y control de ejecución.",
+      ],
+      image: "/images/services/cleaning.jpg",
+      gallery: [
+        "/images/services/cleaning-1.jpg",
+        "/images/services/cleaning-2.jpg",
+        "/images/services/cleaning-3.jpg",
+      ],
+    },
+
     {
       key: "maintenance",
       title: "Construcción y mantenimiento",
       desc: "Ejecución con personal idóneo (arquitectos e ingenieros) y enfoque preventivo/correctivo.",
       bullets: [
         "Diseños de construcción.",
-        "Diseño y construcción de anexos.",
+        // (Cambio solicitado) Eliminado: “Diseño y construcción de anexos”
         "Mantenimiento de estructura (techo, paredes, pisos, cimientos y estacionamientos).",
         "Áreas verdes y mantenimiento de exteriores.",
         "Impermeabilización.",
         "Pintura.",
+        "Seguridad: portones eléctricos y cámaras.",
         "Cuarto de bombas y cuartos eléctricos.",
+        // (Cambio solicitado) Alta/media/baja tensión
+        "Sistema eléctrico de alta, media y baja tensión.",
         "Aire acondicionado.",
         "Voz y data.",
         "Tanques de reserva.",
-        "Seguridad: portones eléctricos y cámaras.",
+        "Sistema de alarmas.",
         "Sistema contra incendio y sistema húmedo.",
-        "Sistema eléctrico de alta, media y baja tensión.",
       ],
-      // GALERÍA (áreas verdes / impermeabilización / seguridad / anexos / eléctrico)
+      image: "/images/services/construction.jpg",
       gallery: [
         "/images/services/greens-1.jpg",
         "/images/services/greens-2.jpg",
         "/images/services/waterproofing-1.jpg",
         "/images/services/painting-1.jpg",
         "/images/services/security-1.jpg",
-        "/images/services/annex-1.jpg",
         "/images/services/electrical-1.jpg",
+        "/images/services/construction-1.jpg",
       ],
     },
+
     {
       key: "contracts",
-      title: "Gestión de contratistas, contratos y seguros",
+      // (Cambio solicitado)
+      title: "Gestión de proveedores, pólizas y contratos",
       desc: "Comparación, formalización y cobertura por proyecto para reducir riesgos.",
       bullets: [
-        "Contratistas certificados: 3 opciones por proyecto + comparativo para decisión.",
+        "Proveedores/contratistas certificados: 3 opciones por proyecto + comparativo para decisión.",
         "Gestión de créditos en materiales y mano de obra (según evaluación).",
         "Contratos específicos por tareas o proyectos.",
-        "Seguros de daños a terceros.",
+        "Gestión de pólizas y seguros de daños a terceros.",
         "Fianzas de cumplimiento y reclamo por incumplimiento (según aplique).",
       ],
+      image: "/images/services/contracts.jpg",
+      gallery: [
+        "/images/services/contracts-1.jpg",
+        "/images/services/contracts-2.jpg",
+        "/images/services/contracts-3.jpg",
+      ],
     },
+
     {
       key: "inspection",
       title: "Informes técnicos y diagnóstico con tecnología",
@@ -140,9 +162,15 @@ export const landing = {
         "Peritajes, certificados e informes técnicos (según requerimiento).",
         "Cámaras térmicas infrarrojas telescópicas para detectar daños internos.",
         "Drones para imágenes panorámicas.",
-        "Cámaras fotográficas de alta definición.",
         "Diagnóstico por sistema: estructural, eléctrico, plomería, A/A, alarmas, contra incendio, fibra óptica.",
         "Mantenimiento correctivo y preventivo + recomendaciones de actualización.",
+        // (Cambio solicitado) Eliminado: “Cámaras fotográficas de alta definición.”
+      ],
+      image: "/images/services/inspection.jpg",
+      gallery: [
+        "/images/tech/thermal.jpg",
+        "/images/tech/drone.jpg",
+        "/images/services/inspection-1.jpg",
       ],
     },
   ],
@@ -151,7 +179,13 @@ export const landing = {
     title: "Sectores atendidos",
     subtitle:
       "Especializados en operación y administración de inmuebles que requieren orden, trazabilidad y ejecución confiable.",
-    items: ["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)"],
+    items: [
+      "Plazas comerciales",
+      "Bodegas",
+      "Propiedad Horizontal (PH)",
+      // (Cambio solicitado)
+      "Hoteles",
+    ],
   },
 
   technology: {
@@ -169,11 +203,7 @@ export const landing = {
         desc: "Levantamiento visual eficiente en cubiertas, fachadas y áreas de difícil acceso.",
         image: "/images/tech/drone.jpg",
       },
-      {
-        title: "Registro fotográfico HD",
-        desc: "Evidencia clara para informes, comparativos y seguimiento por sistema.",
-        image: "",
-      },
+      // (Cambio solicitado) Eliminado el bloque de “Registro fotográfico HD”
     ],
   },
 
@@ -181,12 +211,21 @@ export const landing = {
     title: "Cómo trabajamos",
     subtitle:
       "Un flujo claro, con pasos definidos y entregables alineados al contrato por servicio.",
+    // (Cambio solicitado) Solo 3 pasos
     steps: [
-      { title: "Solicitud", desc: "Recibimos tu necesidad y el contexto del inmueble." },
-      { title: "Reunión", desc: "Coordinamos reunión virtual o física para entender alcance y prioridades." },
-      { title: "Visita del inmueble", desc: "Cuando aplica, realizamos visita técnica para validar condiciones y riesgos." },
-      { title: "Propuesta y contrato por servicio", desc: "Alcance, entregables y condiciones: contratos claros por servicios." },
-      { title: "Ejecución y seguimiento", desc: "Implementación, reportes y recomendaciones según el contrato." },
+      {
+        title: "Solicitud",
+        // (Cambio solicitado) “Solo visita”
+        desc: "Coordinamos visita al inmueble para levantar tus necesidades.",
+      },
+      {
+        title: "Inspección y evaluación en campo",
+        desc: "Revisamos condiciones, prioridades y riesgos para definir el alcance.",
+      },
+      {
+        title: "Levantamiento de propuesta para aprobación",
+        desc: "Presentamos propuesta con alcance y entregables definidos por contrato.",
+      },
     ],
   },
 
@@ -203,14 +242,14 @@ export const landing = {
       },
       {
         q: "¿Qué ocurre después de solicitar cotización?",
-        a: "Coordinamos una reunión (virtual o física) y, cuando aplica, programamos visita del inmueble.",
+        a: "Coordinamos visita al inmueble para levantar información y presentar propuesta para aprobación.",
       },
       {
         q: "¿Incluyen garantías?",
         a: "La garantía y condiciones aplican según el contrato de servicio acordado.",
       },
       {
-        q: "¿Manejan proveedores y comparativos?",
+        q: "¿Manejan comparativos de proveedores?",
         a: "Sí. Presentamos comparativos para facilitar la decisión del cliente y asegurar trazabilidad del proceso.",
       },
     ],
@@ -219,7 +258,7 @@ export const landing = {
   finalCta: {
     title: "Listos para optimizar la operación de tu inmueble.",
     subtitle:
-      "Cuéntanos tu necesidad. Coordinamos reunión y, si aplica, visita del inmueble para levantar información técnica.",
+      "Cuéntanos tu necesidad. Coordinamos visita al inmueble para levantar información y preparar propuesta.",
     primary: "Solicitar cotización",
     secondary: "Hablar por WhatsApp",
   },
@@ -227,19 +266,22 @@ export const landing = {
   form: {
     title: "Solicita una cotización",
     subtitle:
-      "Cuéntanos lo esencial. Coordinamos reunión y, si aplica, visita del inmueble.",
+      "Cuéntanos lo esencial. Coordinamos visita al inmueble y preparamos propuesta para aprobación.",
     submitLabel: "Generar correo",
     successTitle: "Listo: se abrirá tu correo",
     successSubtitle:
       "Si no se abre automáticamente, copia el resumen y pégalo en un correo a grupo@inversionesmg.com.",
     roles: ["Dueño", "Administrador", "Gerente", "Otro"],
-    propertyTypes: ["PH", "Plaza comercial", "Bodega", "Otro"],
+    // (Cambio solicitado) Agregar Hotel
+    propertyTypes: ["PH", "Plaza comercial", "Bodega", "Hotel", "Otro"],
     meetingPrefs: ["Virtual", "Presencial", "Ambas"],
+    // (Cambio solicitado) Agregar Limpieza + ajustar nombres
     interestOptions: [
       "Servicios administrativos y legales",
       "Contabilidad y finanzas",
+      "Limpieza y mantenimiento operativo",
       "Construcción y mantenimiento",
-      "Gestión de contratistas, contratos y seguros",
+      "Gestión de proveedores, pólizas y contratos",
       "Informes técnicos y diagnóstico con tecnología",
     ],
   },
