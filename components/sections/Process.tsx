@@ -1,9 +1,26 @@
 import { landing } from "@/content/landing";
-import SectionHeading from "@/components/SectionHeading";
-import { Card, CardContent } from "@/components/ui/card";
 import { ClipboardList, Search, FileCheck } from "lucide-react";
 
 const icons = [ClipboardList, Search, FileCheck];
+
+function SectionHeadingInline({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle?: string;
+}) {
+  return (
+    <div className="max-w-2xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-slate-900">
+        {title}
+      </h2>
+      {subtitle ? (
+        <p className="mt-3 text-sm leading-6 text-slate-600">{subtitle}</p>
+      ) : null}
+    </div>
+  );
+}
 
 export default function Process() {
   const steps = landing.process.steps;
@@ -11,7 +28,7 @@ export default function Process() {
   return (
     <section id="proceso" className="section-pad scroll-mt-24">
       <div className="container-pad">
-        <SectionHeading
+        <SectionHeadingInline
           title={landing.process.title}
           subtitle={landing.process.subtitle}
         />
@@ -21,8 +38,8 @@ export default function Process() {
             const Icon = icons[idx] ?? ClipboardList;
 
             return (
-              <Card key={step.title} className="surface">
-                <CardContent className="p-7">
+              <div key={step.title} className="surface">
+                <div className="p-7">
                   <div className="flex items-start gap-4">
                     <div className="grid h-12 w-12 place-items-center rounded-2xl border border-slate-200 bg-white shadow-sm">
                       <Icon className="h-5 w-5 text-slate-700" />
@@ -37,8 +54,8 @@ export default function Process() {
                       </p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             );
           })}
         </div>
