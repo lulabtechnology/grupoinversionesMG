@@ -16,15 +16,40 @@ export default function Header() {
     "Hola, me gustaría solicitar una cotización con Grupo MG. ¿Podemos coordinar una reunión?";
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b bg-white/85 backdrop-blur relative overflow-hidden">
       <SkipLink />
 
-      <div className="container-pad h-16 flex items-center justify-between gap-4">
-        <a href="#top" className="focus-ring rounded-2xl">
-          <Brand />
+      {/* Watermark sutil del logo en el header (disimulado) */}
+      <img
+        src={landing.images.logo}
+        alt=""
+        aria-hidden="true"
+        className="
+          pointer-events-none select-none
+          absolute -right-10 -top-10
+          w-[220px] sm:w-[280px]
+          opacity-[0.06]
+          blur-[0.2px]
+        "
+      />
+
+      {/* Más altura en desktop para permitir logo más grande */}
+      <div className="container-pad h-16 lg:h-20 flex items-center justify-between gap-4">
+        <a
+          href="#top"
+          className="focus-ring rounded-2xl flex items-center min-w-0"
+          aria-label="Ir al inicio"
+        >
+          {/* Escalado seguro del Brand (no rompe nada) */}
+          <div className="origin-left scale-[1.18] lg:scale-[1.28]">
+            <Brand />
+          </div>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Navegación principal">
+        <nav
+          className="hidden lg:flex items-center gap-1"
+          aria-label="Navegación principal"
+        >
           {landing.nav.map((i) => (
             <a
               key={i.href}
@@ -43,7 +68,11 @@ export default function Header() {
           >
             {landing.hero.primaryCta}
           </Button>
-          <a href={waLink(landing.contact.whatsapp, waMsg)} target="_blank" rel="noreferrer">
+          <a
+            href={waLink(landing.contact.whatsapp, waMsg)}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Button className="gap-2">
               <MessageCircle className="h-4 w-4" />
               {landing.hero.secondaryCta}
@@ -52,7 +81,7 @@ export default function Header() {
         </div>
 
         <button
-          className="lg:hidden rounded-2xl border p-2 hover:bg-slate-900/5 focus-ring"
+          className="lg:hidden shrink-0 rounded-2xl border p-2 hover:bg-slate-900/5 focus-ring"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           aria-controls={menuId}
@@ -87,7 +116,11 @@ export default function Header() {
                 {landing.hero.primaryCta}
               </Button>
 
-              <a href={waLink(landing.contact.whatsapp, waMsg)} target="_blank" rel="noreferrer">
+              <a
+                href={waLink(landing.contact.whatsapp, waMsg)}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="w-full gap-2">
                   <MessageCircle className="h-4 w-4" />
                   {landing.hero.secondaryCta}
