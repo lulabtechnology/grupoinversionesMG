@@ -131,7 +131,7 @@ export const landing = {
       title: "Gestión de proveedores, pólizas y contratos",
       desc: "Comparación, formalización y cobertura por proyecto para reducir riesgos.",
       bullets: [
-        "Proveedores/contratistas certificados: 3 opciones por proyecto + comparativo para decisión.",
+        "Comparativo, contratación y cobertura por proyecto para minimizar riesgos.",
         "Gestión de créditos en materiales y mano de obra (según evaluación).",
         "Contratos específicos por tareas o proyectos.",
         "Pólizas y seguros de daños a terceros (según aplique).",
