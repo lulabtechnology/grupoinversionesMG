@@ -27,7 +27,8 @@ export const landing = {
   ],
 
   hero: {
-    headline: "Eficiencia operativa y contratos claros por servicios.",
+    // CAMBIO: frase exacta pedida en el HERO
+    headline: "Eficiencia operativa y contratos específicos por servicios.",
     subheadline:
       "Operación y administración de inmuebles con tecnología de punta y alcance definido por contrato.",
     primaryCta: "Solicitar cotización",
@@ -41,7 +42,8 @@ export const landing = {
       desc: "Orden, control y ejecución enfocada en lo que tu inmueble necesita hoy.",
     },
     {
-      title: "Contratos claros por servicios",
+      // CAMBIO: alineado al headline
+      title: "Contratos específicos por servicios",
       desc: "Alcance definido por tarea o proyecto, con entregables y responsabilidades claras.",
     },
     {
@@ -54,14 +56,12 @@ export const landing = {
     {
       key: "legal",
       title: "Servicios administrativos y legales",
-      desc: "Soporte legal y estructuración para la operación y administración de bienes inmuebles.",
+      // CAMBIO: exacto como lo pediste (solo eso)
+      desc: "Soporte legal y estructura para la operación.",
       bullets: [
-        // CAMBIO: se elimina la línea repetida (personería jurídica)
         "Constitución de empresas e inscripción en entidades gubernamentales.",
-        // CAMBIO: reemplazo de frase a lo pedido (solo esto)
         "Reglamentos de uso para PH, bodegas, centros comerciales y hoteles.",
       ],
-      // CAMBIO: más imágenes administrativo/legal
       gallery: [
         "/images/services/admin-legal-1.jpg",
         "/images/services/admin-legal-2.jpg",
@@ -75,7 +75,6 @@ export const landing = {
       title: "Contabilidad y finanzas",
       desc: "Control financiero, reportes y planificación para decisiones seguras.",
       bullets: [
-        // CAMBIO: “Contabilidad completa” => “Ciclo contable”
         "Ciclo contable.",
         "Informes mensuales, trimestrales y anuales.",
         "Auditoría y fiscalización.",
@@ -86,7 +85,6 @@ export const landing = {
         "Gestión de mercadeo y ventas.",
         "Asesoría de nuevas inversiones basada en el mercado.",
       ],
-      // CAMBIO: más imágenes contables/administrativas
       gallery: [
         "/images/services/accounting-1.jpg",
         "/images/services/accounting-2.jpg",
@@ -103,9 +101,7 @@ export const landing = {
       desc: "Ejecución con personal idóneo (arquitectos e ingenieros) y enfoque preventivo/correctivo.",
       bullets: [
         "Diseños de construcción.",
-        // CAMBIO: eliminar “Diseño y construcción de anexos”
         "Mantenimiento de estructura (techo, paredes, pisos, cimientos y estacionamientos).",
-        // CAMBIO: contemplar áreas verdes / impermeabilización / pintura / seguridad
         "Áreas verdes y mantenimiento de exteriores.",
         "Impermeabilización.",
         "Pintura.",
@@ -115,12 +111,9 @@ export const landing = {
         "Tanques de reserva.",
         "Seguridad: portones eléctricos y cámaras.",
         "Sistema contra incendio y sistema húmedo.",
-        // CAMBIO: alta / media / baja tensión
         "Sistema eléctrico de alta, media y baja tensión.",
-        // CAMBIO: incluir limpieza como servicio
         "Servicio de limpieza (áreas comunes, exteriores y post-obra).",
       ],
-      // CAMBIO: más imágenes de áreas verdes / impermeabilización
       gallery: [
         "/images/services/greens-1.jpg",
         "/images/services/greens-2.jpg",
@@ -136,7 +129,6 @@ export const landing = {
 
     {
       key: "contracts",
-      // CAMBIO: título EXACTO pedido
       title: "Gestión de proveedores, pólizas y contratos",
       desc: "Comparación, formalización y cobertura por proyecto para reducir riesgos.",
       bullets: [
@@ -146,24 +138,27 @@ export const landing = {
         "Pólizas y seguros de daños a terceros (según aplique).",
         "Fianzas de cumplimiento y reclamo por incumplimiento (según aplique).",
       ],
-      // opcional: si tu UI soporta gallery, ya queda lista
-      gallery: ["/images/services/contracts-1.jpg", "/images/services/contracts-2.jpg"],
+      gallery: [
+        "/images/services/contracts-1.jpg",
+        "/images/services/contracts-2.jpg",
+      ],
     },
 
     {
       key: "inspection",
-      // CAMBIO: título EXACTO pedido
       title: "Informes técnicos con tecnología de punta",
       desc: "Levantamiento detallado por sistema, con herramientas de inspección avanzadas.",
       bullets: [
         "Peritajes, certificados e informes técnicos (según requerimiento).",
         "Cámaras térmicas infrarrojas telescópicas para detectar daños internos.",
         "Drones para imágenes panorámicas.",
-        // CAMBIO: quitar cámaras fotográficas HD
         "Diagnóstico por sistema: estructural, eléctrico, plomería, A/A, alarmas, contra incendio, fibra óptica.",
         "Mantenimiento correctivo y preventivo + recomendaciones de actualización.",
       ],
-      gallery: ["/images/services/inspection-1.jpg", "/images/services/inspection-2.jpg"],
+      gallery: [
+        "/images/services/inspection-1.jpg",
+        "/images/services/inspection-2.jpg",
+      ],
     },
   ],
 
@@ -171,7 +166,6 @@ export const landing = {
     title: "Sectores atendidos",
     subtitle:
       "Especializados en operación y administración de inmuebles que requieren orden, trazabilidad y ejecución confiable.",
-    // CAMBIO: agregar hoteles
     items: ["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)", "Hoteles"],
   },
 
@@ -190,16 +184,13 @@ export const landing = {
         desc: "Levantamiento visual eficiente en cubiertas, fachadas y áreas de difícil acceso.",
         image: "/images/tech/drone.jpg",
       },
-      // CAMBIO: removí “Registro fotográfico HD” porque tu image estaba vacío y además pediste quitar lo de cámaras HD
     ],
   },
 
   process: {
     title: "Cómo trabajamos",
     subtitle: "Tres pasos claros, desde la visita hasta la propuesta para aprobación.",
-    // CAMBIO: proceso reducido a 3 pasos EXACTOS
     steps: [
-      // CAMBIO: “Solo visita”
       {
         title: "Solicitud",
         desc: "Coordinamos visita al inmueble para entender la necesidad y el contexto.",
@@ -228,7 +219,6 @@ export const landing = {
       },
       {
         q: "¿Qué ocurre después de solicitar cotización?",
-        // CAMBIO: alineado al nuevo proceso (visita + propuesta)
         a: "Coordinamos visita al inmueble, realizamos la evaluación y levantamos la propuesta para aprobación.",
       },
       {
@@ -259,10 +249,8 @@ export const landing = {
     successSubtitle:
       "Si no se abre automáticamente, copia el resumen y pégalo en un correo a grupo@inversionesmg.com.",
     roles: ["Dueño", "Administrador", "Gerente", "Otro"],
-    // CAMBIO: agregar Hotel
     propertyTypes: ["PH", "Plaza comercial", "Bodega", "Hotel", "Otro"],
     meetingPrefs: ["Virtual", "Presencial", "Ambas"],
-    // CAMBIO: reflejar títulos actualizados
     interestOptions: [
       "Servicios administrativos y legales",
       "Contabilidad y finanzas",
