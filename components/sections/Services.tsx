@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import FadeIn from "@/components/motion/FadeIn";
 import SectionHeading from "@/components/site/SectionHeading";
 import { landing } from "@/content/landing";
@@ -30,7 +30,22 @@ export default function Services() {
   return (
     <>
       <section id="servicios" className="section-pad scroll-mt-24">
-        <div className="container-pad">
+        <div className="container-pad relative">
+          {/* Watermark sutil del logo dentro de la sección (disimulado) */}
+          <img
+            src={landing.images.logo}
+            alt=""
+            aria-hidden="true"
+            className="
+              pointer-events-none select-none
+              absolute -left-12 top-0
+              hidden lg:block
+              w-[520px]
+              opacity-[0.05]
+              blur-[0.2px]
+            "
+          />
+
           <SectionHeading
             title="Servicios"
             subtitle="Vista corta por defecto. Expande cada bloque si necesitas el detalle completo."
@@ -44,12 +59,10 @@ export default function Services() {
               const rest = bullets.slice(3);
 
               const gallery = (s as any).gallery as string[] | undefined;
-              const allImages = useMemo(() => gallery ?? [], [gallery]);
+              const allImages = gallery ?? [];
 
               const thumbs = allImages.slice(0, 4);
               const remaining = allImages.length - thumbs.length;
-
-              // Si hay más de 4, el último thumb muestra +N y abre modal.
               const showPlusOnLast = remaining > 0;
 
               return (
@@ -70,7 +83,6 @@ export default function Services() {
                       </div>
                     </div>
 
-                    {/* Galería: ahora el +N es clickeable y muestra todas */}
                     {thumbs.length ? (
                       <div className="mt-4">
                         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -114,7 +126,6 @@ export default function Services() {
                           })}
                         </div>
 
-                        {/* Link secundario (opcional) para claridad */}
                         {allImages.length > 4 ? (
                           <button
                             type="button"
