@@ -15,7 +15,6 @@ export default function Hero() {
     window.location.hash = "#contacto";
   };
 
-  // Subheadline resumido (mantiene esencia)
   const shortSubheadline =
     "Tecnología aplicada y criterio experto para operar inmuebles con alcance definido por contrato.";
 
@@ -42,18 +41,36 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/35 to-slate-950/65" />
         <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_18%_12%,rgba(33,134,140,0.45),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_88%_28%,rgba(15,23,42,0.40),transparent_60%)]" />
+
+        {/* Watermark sutil del logo */}
+        <img
+          src={landing.images.logo}
+          alt=""
+          aria-hidden="true"
+          className="
+            pointer-events-none select-none
+            absolute -right-10 -top-10
+            w-[280px] sm:w-[360px] lg:w-[520px]
+            opacity-[0.08]
+            blur-[0.2px]
+          "
+        />
       </div>
 
       <div className="container-pad">
-        {/* Más compacto que antes */}
         <div className="py-12 sm:py-14 lg:py-16">
           <div className="grid gap-7 lg:grid-cols-12 lg:items-center">
-            {/* Columna texto */}
             <div className="lg:col-span-7">
               <FadeIn>
-                <p className="text-xs sm:text-sm text-white/80">
-                  Operación y administración para inmuebles
-                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-xs sm:text-sm text-white/80">
+                    Operación y administración para inmuebles
+                  </p>
+
+                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] text-white/85">
+                    Más de 10 años de experiencia
+                  </span>
+                </div>
 
                 <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold tracking-tight text-white">
                   {landing.hero.headline}
@@ -63,7 +80,6 @@ export default function Hero() {
                   {shortSubheadline}
                 </p>
 
-                {/* Highlights cortos (sin párrafos largos) */}
                 <div className="mt-5 grid gap-2 text-sm text-white/85 max-w-xl">
                   <div className="flex items-start gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
@@ -71,12 +87,14 @@ export default function Hero() {
                       <span className="font-medium text-white">Eficiencia:</span> orden y ejecución con trazabilidad.
                     </span>
                   </div>
+
                   <div className="flex items-start gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
                     <span>
-                      <span className="font-medium text-white">Contratos claros por servicios:</span> alcance y entregables definidos.
+                      <span className="font-medium text-white">Contratos específicos por servicios:</span> alcance y entregables definidos.
                     </span>
                   </div>
+
                   <div className="flex items-start gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[hsl(var(--primary))]" />
                     <span>
@@ -108,7 +126,7 @@ export default function Hero() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)"].map((x) => (
+                  {["Plazas comerciales", "Bodegas", "Propiedad Horizontal (PH)", "Hoteles"].map((x) => (
                     <span
                       key={x}
                       className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/85"
@@ -120,7 +138,6 @@ export default function Hero() {
               </FadeIn>
             </div>
 
-            {/* Card lateral (en mobile queda abajo) */}
             <div className="lg:col-span-5">
               <FadeIn delay={0.06}>
                 <div
@@ -137,7 +154,7 @@ export default function Hero() {
                     Propuesta clara. Ejecución confiable.
                   </div>
                   <p className="mt-2 text-sm leading-6 text-white/80">
-                    Coordinamos reunión y, si aplica, visita del inmueble. Garantía según contrato.
+                    Coordinamos visita al inmueble y levantamos la propuesta para aprobación.
                   </p>
 
                   <div className="mt-5 hairline opacity-40" />
