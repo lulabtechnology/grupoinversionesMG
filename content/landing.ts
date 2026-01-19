@@ -90,8 +90,7 @@ export const landing = {
         "/images/services/accounting-2.jpg",
         "/images/services/accounting-3.jpg",
         "/images/services/accounting-4.jpg",
-        "/images/services/accounting-5.jpg",
-        "/images/services/accounting-6.jpg",
+       
       ],
     },
 
@@ -119,11 +118,11 @@ export const landing = {
         "/images/services/greens-2.jpg",
         "/images/services/greens-3.jpg",
         "/images/services/waterproofing-1.jpg",
-        "/images/services/waterproofing-2.jpg",
+        
         "/images/services/painting-1.jpg",
         "/images/services/security-1.jpg",
         "/images/services/electrical-1.jpg",
-        "/images/services/cleaning-1.jpg",
+        
       ],
     },
 
