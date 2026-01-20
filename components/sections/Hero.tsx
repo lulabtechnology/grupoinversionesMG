@@ -15,8 +15,8 @@ export default function Hero() {
     window.location.hash = "#contacto";
   };
 
-  // Tu placeholder (recuerda subir la imagen a public/images/brand/hero-visual.svg)
-  // const heroGraphic = "/images/brand/hero-visual.svg";
+  // ESTA es la ruta que debe coincidir con tu archivo en la carpeta public
+  const heroGraphic = "/images/brand/hero-visual.svg";
 
   const shortSubheadline =
     "Tecnología aplicada y criterio experto para operar inmuebles con alcance definido por contrato.";
@@ -51,9 +51,9 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_18%_12%,rgba(33,134,140,0.45),transparent_0%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_88%_28%,rgba(15,23,42,0.40),transparent_0%)]" />
 
-        {/* Watermark sutil del logo - COMENTADO PARA QUITAR EL SIGNO DE INTERROGACIÓN */}
+        {/* Watermark de fondo (Lo dejé comentado por si acaso, si lo usas descoméntalo) */}
         {/* <img
-          src="/images/brand/hero-visual.svg"
+          src="/images/brand/logo-mark.svg"
           alt=""
           aria-hidden="true"
           className="
@@ -68,8 +68,12 @@ export default function Hero() {
 
       <div className="container-pad relative">
         
-        {/* 2. IMAGEN FLOTANTE MÓVIL (SOLUCIÓN PEDIDA) - COMENTADO */}
-        {/* <div className="absolute top-0 -right-4 w-[140px] h-[140px] sm:hidden opacity-90 animate-in fade-in zoom-in duration-1000">
+        {/* IMAGEN FLOTANTE MÓVIL (ACTIVADA)
+            - Ubicación: top-0 (arriba del todo)
+            - Si sigues viendo el signo de interrogación, verifica que el archivo 
+              hero-visual.svg esté dentro de la carpeta public/images/brand/
+        */}
+        <div className="absolute top-0 -right-4 w-[140px] h-[140px] sm:hidden opacity-90 animate-in fade-in zoom-in duration-1000">
            <Image 
              src={heroGraphic}
              alt="Visual decorativo"
@@ -77,11 +81,11 @@ export default function Hero() {
              height={200}
              className="object-contain drop-shadow-2xl"
            />
-        </div> */}
+        </div>
 
         <div className="py-12 sm:py-14 lg:py-16">
           <div className="grid gap-7 lg:grid-cols-12 lg:items-center">
-            {/* Agregué 'relative z-10' para asegurar que el texto quede ENCIMA de la imagen si se tocan */}
+            {/* z-10 para que el texto pise la imagen si se cruzan */}
             <div className="lg:col-span-7 relative z-10"> 
               <FadeIn>
                 <div className="flex flex-wrap items-center gap-2">
@@ -162,8 +166,8 @@ export default function Hero() {
 
             <div className="lg:col-span-5">
               <FadeIn delay={0.06}>
-                {/* Desktop Image - COMENTADO */}
-                {/* <div className="hidden lg:flex justify-center mb-6">
+                {/* Desktop Image (Opcional, también activada) */}
+                <div className="hidden lg:flex justify-center mb-6">
                    <Image 
                      src={heroGraphic}
                      alt="Visual decorativo desktop"
@@ -171,7 +175,7 @@ export default function Hero() {
                      height={320}
                      className="object-contain drop-shadow-2xl"
                    />
-                </div> */}
+                </div>
 
                 <div
                   className="
