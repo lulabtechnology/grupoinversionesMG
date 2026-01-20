@@ -15,6 +15,9 @@ export default function Hero() {
     window.location.hash = "#contacto";
   };
 
+  // 1. Aquí defines la ruta de tu imagen SVG o PNG futura
+  const heroGraphic = "/images/brand/hero-visual.svg";
+
   const shortSubheadline =
     "Tecnología aplicada y criterio experto para operar inmuebles con alcance definido por contrato.";
 
@@ -22,35 +25,25 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden" aria-label="Hero Grupo MG">
       {/* Background image (cover, responsivo real) */}
       <div className="absolute inset-0 -z-10">
-        {/* Background image (desktop vs mobile) */}
-<div className="absolute inset-0 -z-10">
-  {/* MOBILE */}
-  <Image
-    src={landing.hero.heroImageMobile ?? landing.hero.heroImage}
-    alt="Infraestructura y operación de inmuebles"
-    fill
-    priority
-    sizes="100vw"
-    className="object-cover object-center sm:hidden"
-  />
+        {/* MOBILE */}
+        <Image
+          src={landing.hero.heroImageMobile ?? landing.hero.heroImage}
+          alt="Infraestructura y operación de inmuebles"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center sm:hidden"
+        />
 
-  {/* DESKTOP / TABLET */}
-  <Image
-    src={landing.hero.heroImage}
-    alt="Infraestructura y operación de inmuebles"
-    fill
-    priority
-    sizes="100vw"
-    className="hidden sm:block object-cover object-center"
-  />
-
-  {/* Overlays premium: color + legibilidad */}
-  <div className="absolute inset-0 bg-slate-950/45" />
-  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/35 to-slate-950/65" />
-  <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_18%_12%,rgba(33,134,140,0.45),transparent_0%)]" />
-  <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_88%_28%,rgba(15,23,42,0.40),transparent_0%)]" />
-</div>
-
+        {/* DESKTOP / TABLET */}
+        <Image
+          src={landing.hero.heroImage}
+          alt="Infraestructura y operación de inmuebles"
+          fill
+          priority
+          sizes="100vw"
+          className="hidden sm:block object-cover object-center"
+        />
 
         {/* Overlays premium: color + legibilidad */}
         <div className="absolute inset-0 bg-slate-950/45" />
@@ -73,10 +66,26 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container-pad">
+      <div className="container-pad relative">
+        
+        {/* 2. IMAGEN FLOTANTE MÓVIL (SOLUCIÓN PEDIDA)
+           Esta imagen se posiciona absolutamente a la derecha, en el espacio vacío marcado.
+           Solo visible en móvil (sm:hidden).
+        */}
+        <div className="absolute top-[80px] -right-4 w-[160px] h-[160px] sm:hidden opacity-90 animate-in fade-in zoom-in duration-1000">
+           {/* Placeholder visual */}
+           <Image 
+             src={heroGraphic}
+             alt="Visual decorativo"
+             width={200}
+             height={200}
+             className="object-contain drop-shadow-2xl"
+           />
+        </div>
+
         <div className="py-12 sm:py-14 lg:py-16">
           <div className="grid gap-7 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 relative z-10"> {/* z-10 para asegurar que el texto quede sobre la imagen si se solapan */}
               <FadeIn>
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="text-xs sm:text-sm text-white/80">
@@ -156,6 +165,19 @@ export default function Hero() {
 
             <div className="lg:col-span-5">
               <FadeIn delay={0.06}>
+                {/* 3. IMAGEN EN DESKTOP (OPCIONAL PERO RECOMENDADO)
+                   Se muestra encima de la tarjeta en pantallas grandes.
+                */}
+                <div className="hidden lg:flex justify-center mb-6">
+                   <Image 
+                     src={heroGraphic}
+                     alt="Visual decorativo desktop"
+                     width={320}
+                     height={320}
+                     className="object-contain drop-shadow-2xl"
+                   />
+                </div>
+
                 <div
                   className="
                     surface
