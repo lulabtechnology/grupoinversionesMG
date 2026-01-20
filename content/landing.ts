@@ -26,15 +26,16 @@ export const landing = {
     { label: "Contacto", href: "#contacto" },
   ],
 
-  hero: {
-    // CAMBIO: frase exacta pedida en el HERO
-    headline: "Grupo MG: Eficiencia operativa y contratos específicos por servicios.",
-    subheadline:
-      "Operación y administración de inmuebles con tecnología de punta y alcance definido por contrato.",
-    primaryCta: "Solicitar cotización",
-    secondaryCta: "Hablar por WhatsApp",
-    heroImage: "/images/hero/hero.jpg",
-  },
+ hero: {
+  headline: "Eficiencia operativa y contratos claros por servicios.",
+  subheadline:
+    "Operación y administración de inmuebles con tecnología de punta y alcance definido por contrato.",
+  primaryCta: "Solicitar cotización",
+  secondaryCta: "Hablar por WhatsApp",
+  heroImage: "/images/hero/hero.jpg",
+  heroImageMobile: "/images/hero/hero-mobile.jpg",
+},
+
 
   valueProps: [
     {
