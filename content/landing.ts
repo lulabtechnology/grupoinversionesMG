@@ -28,7 +28,7 @@ export const landing = {
 
   hero: {
     // CAMBIO: frase exacta pedida en el HERO
-    headline: "Eficiencia operativa y contratos específicos por servicios.",
+    headline: "GRUPO MG Eficiencia operativa y contratos específicos por servicios.",
     subheadline:
       "Operación y administración de inmuebles con tecnología de punta y alcance definido por contrato.",
     primaryCta: "Solicitar cotización",
