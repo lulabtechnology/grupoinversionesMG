@@ -53,7 +53,7 @@ export default function Hero() {
 
         {/* Watermark sutil del logo - COMENTADO PARA QUITAR EL SIGNO DE INTERROGACIÓN */}
         {/* <img
-          src="/images/brand/logo-mark.svg"
+          src="/images/brand/hero-visual.svg"
           alt=""
           aria-hidden="true"
           className="
