@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* Watermark sutil del logo */}
         <img
-          src={landing.images.logo}
+          src="/images/brand/logo-mark.svg"
           alt=""
           aria-hidden="true"
           className="
