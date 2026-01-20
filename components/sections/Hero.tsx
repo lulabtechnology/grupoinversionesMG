@@ -22,19 +22,35 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden" aria-label="Hero Grupo MG">
       {/* Background image (cover, responsivo real) */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src={landing.hero.heroImage}
-          alt="Infraestructura y operación de inmuebles"
-          fill
-          priority
-          sizes="100vw"
-          className="
-            object-cover
-            object-[70%_55%]
-            sm:object-[60%_55%]
-            lg:object-center
-          "
-        />
+        {/* Background image (desktop vs mobile) */}
+<div className="absolute inset-0 -z-10">
+  {/* MOBILE */}
+  <Image
+    src={landing.hero.heroImageMobile ?? landing.hero.heroImage}
+    alt="Infraestructura y operación de inmuebles"
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-center sm:hidden"
+  />
+
+  {/* DESKTOP / TABLET */}
+  <Image
+    src={landing.hero.heroImage}
+    alt="Infraestructura y operación de inmuebles"
+    fill
+    priority
+    sizes="100vw"
+    className="hidden sm:block object-cover object-center"
+  />
+
+  {/* Overlays premium: color + legibilidad */}
+  <div className="absolute inset-0 bg-slate-950/45" />
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/35 to-slate-950/65" />
+  <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_18%_12%,rgba(33,134,140,0.45),transparent_60%)]" />
+  <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_88%_28%,rgba(15,23,42,0.40),transparent_60%)]" />
+</div>
+
 
         {/* Overlays premium: color + legibilidad */}
         <div className="absolute inset-0 bg-slate-950/45" />
